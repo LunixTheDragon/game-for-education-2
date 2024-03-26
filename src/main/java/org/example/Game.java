@@ -31,7 +31,19 @@ public class Game {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-                    logic.getBall().move(50, Direction.LEFT);
+                    logic.getBall().move(25, Direction.LEFT);
+                }
+                if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                    logic.getBall().move(25, Direction.RIGHT);
+                }
+                if (e.getKeyCode() == KeyEvent.VK_UP) {
+                    logic.getBall().move(25, Direction.UP);
+                }
+                if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+                    logic.getBall().move(25, Direction.DOWN);
+                }
+                if (e.getKeyCode() == KeyEvent.VK_W) {
+                    logic.getBall().move(25, Direction.UP);
                 }
             }
 
@@ -73,7 +85,7 @@ public class Game {
             }
         });
 
-        Timer timer = new Timer(100, new ActionListener() {
+        Timer timer = new Timer(70, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 logic.update();

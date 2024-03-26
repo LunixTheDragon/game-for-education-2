@@ -17,11 +17,20 @@ public class Wall {
         return coordStart;
     }
 
+
     public Coordinates getCoordEnd() {
         return coordEnd;
     }
 
     public Color getColor() {
         return color;
+    }
+
+    public Rectangle getBounds(){
+        int x=Math.min(coordStart.x, coordEnd.x);
+        int y= Math.min(coordStart.y, coordEnd.y);
+        int width= Math.abs(coordEnd.x - coordStart.x);
+        int height=Math.abs(coordEnd.y- coordStart.y);
+        return new Rectangle(x, y, width, height);
     }
 }

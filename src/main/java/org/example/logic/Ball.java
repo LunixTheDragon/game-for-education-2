@@ -58,8 +58,10 @@ public class Ball {
     }
 
     public boolean isCollided (Rectangle otherObject) {
-        Rectangle ballRectangle = new Rectangle(x,y,width, height);
-        return ballRectangle.intersects(otherObject);
+        return getBallRectangle().intersects(otherObject);
+    }
+    public Rectangle getBallRectangle(){
+        return new Rectangle(x, y, width, height);
     }
 
     public void move(int steps, Direction direction) {
